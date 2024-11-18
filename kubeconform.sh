@@ -35,5 +35,5 @@ do
       fi
     fi
     echo "Running kubeconform on $arg"
-    kubeconform -strict -exit-on-error -ignore-missing-schemas -summary -schema-location default -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json' $arg
+    kubeconform -strict --output pretty -exit-on-error -ignore-missing-schemas -summary -schema-location default -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json' $arg
 done
